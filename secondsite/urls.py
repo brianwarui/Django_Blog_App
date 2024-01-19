@@ -28,6 +28,7 @@ from django.conf import settings
 urlpatterns = [
     path('', include('blog.urls')),
     path('admin/', admin.site.urls),
+    path('ckeditor', include('ckeditor_uploader.urls')),
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
@@ -40,4 +41,3 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-urlpatterns += staticfiles_urlpatterns()

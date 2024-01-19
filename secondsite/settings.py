@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'blog',
     'users',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
     'crispy_forms',
     'crispy_bootstrap5',
 ]
@@ -53,8 +53,9 @@ CKEDITOR_BASEPATH = "static/ckeditor/ckeditor"
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Custom',
+        'height':500,
         'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline'],
+            ['Bold', 'Italic', 'Underline', 'Image'],
             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ['Link', 'Unlink'],
             ['RemoveFormat', 'Source']
