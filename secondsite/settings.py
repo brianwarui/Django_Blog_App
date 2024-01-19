@@ -48,6 +48,8 @@ INSTALLED_APPS = [
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
+CKEDITOR_BASEPATH = "static/ckeditor/ckeditor"
+
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Custom',
