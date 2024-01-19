@@ -1,0 +1,11 @@
+{% extends 'blog/main.html' %}
+
+{% block content %}
+	
+	<p class="text-muted"> You have been logged out successfully! </p>
+	<div class="form-group">
+			 <a class="btn btn-outline-info" href="{% url 'login' %}"> Sign In Again </a>
+		</div>
+	
+
+{% endblock %}
