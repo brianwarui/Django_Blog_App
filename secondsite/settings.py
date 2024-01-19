@@ -92,15 +92,7 @@ import dj_database_url
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_database_5ody',
-        'USER': 'django_database_5ody_user',
-        'PASSWORD': os.environ.get('Django_PASS'),
-        'HOST': 'dpg-cml2vracn0vc739ma5hg-a.oregon-postgres.render.com',
-        'PORT': '',
-
-    }
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 # Password validation
