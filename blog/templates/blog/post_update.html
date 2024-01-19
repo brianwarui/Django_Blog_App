@@ -11,23 +11,23 @@
 		{{form.media}}	
 		{{form|crispy}}
 
-		
-		<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
 		<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+		<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+		
 
 		<script>
-      document.addEventListener('DOMContentLoaded', function () {
-        // Replace 'id_content' with the actual ID of your textarea
-        CKEDITOR.replace('id_content', {
-          // Copy the CKEditor configuration from your textarea
-          // ...
-          // Include any additional configuration if needed
-        });
-      });
+		      document.addEventListener('DOMContentLoaded', function () {
+		        // Replace 'id_content' with the actual ID of your textarea
+		        CKEDITOR.replace('id_content', {
+		          // Copy the CKEditor configuration from your textarea
+		          // ...
+		          // Include any additional configuration if needed
+		        });
+		      });
     </script>
 
-    <textarea name="content" cols="40" rows="10" class="ckeditoruploadingwidget form-control" required="" id="id_content" data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, ... }" data-external-plugin-resources="[]" data-id="id_content" data-type="ckeditortype" data-gramm="false" wt-ignore-input="true" data-quillbot-element="LBgz7nVntK3FHBWLk5dJe"></textarea>
-
+   <!--  <textarea name="content" cols="40" rows="10" class="ckeditoruploadingwidget form-control" required="" id="id_content" data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, ... }" data-external-plugin-resources="[]" data-id="id_content" data-type="ckeditortype" data-gramm="false" wt-ignore-input="true" data-quillbot-element="LBgz7nVntK3FHBWLk5dJe"></textarea>
+ -->
 
 		<div class="form-group">
 			<button class="btn btn-outline-info" type="submit"> Update Blog </a></button>
