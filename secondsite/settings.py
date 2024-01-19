@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
 ]
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_UPLOAD_PATH = 'ckeditor_uploads/'
 
 CKEDITOR_CONFIGS = {
     'default': {
