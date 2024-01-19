@@ -47,6 +47,23 @@ INSTALLED_APPS = [
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'height':500,
+        'toolbar_Custom':[
+            ['Bold', 'Link', 'Image'],
+        ]
+    },
+    'special':{
+        'toolbar':'Special',
+        'toolbar_Special':[
+            ['Bold', 'CodeSnippet'],
+        ],
+        'extraPlugins': 'CodeSnippet',
+    }
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
