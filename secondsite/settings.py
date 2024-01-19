@@ -41,26 +41,22 @@ INSTALLED_APPS = [
     'blog',
     'users',
     'ckeditor',
+    'ckeditor_uploader'
     'crispy_forms',
     'crispy_bootstrap5',
 ]
 
-CKEDITOR_UPLOAD_PATH = 'ckeditor_uploads/'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Custom',
-        'height':500,
-        'toolbar_Custom':[
-            ['Bold', 'Link', 'Image'],
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
         ]
-    },
-    'special':{
-        'toolbar':'Special',
-        'toolbar_Special':[
-            ['Bold', 'CodeSnippet'],
-        ],
-        'extraPlugins': 'CodeSnippet',
     }
 }
 
