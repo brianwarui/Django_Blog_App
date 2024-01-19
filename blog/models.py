@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User 
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.urls import reverse
 from django.utils import timezone
 # Create your models here.
@@ -14,7 +15,7 @@ STATUS = (
 
 class Post(models.Model):
 	title = models.CharField(max_length=200)
-	content = RichTextField()
+	content = RichTextUploadingField()
 	created_on = models.DateTimeField(auto_now_add=True)
 	updated_on = models.DateTimeField(auto_now=True)
 	status = models.IntegerField(choices=STATUS, default=1)

@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
 ]
 
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -132,6 +134,7 @@ TIME_ZONE = 'Africa/Nairobi'
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT= 'C:/Users/USER/Desktop/playground2/secondsite/static'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 
