@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -77,8 +77,8 @@ ROOT_URLCONF = 'secondsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': False,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -149,6 +149,16 @@ TIME_ZONE = 'Africa/Nairobi'
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",               # Global/static project-wide directory
+    BASE_DIR / "blog" / "static",     # App-specific static directory
+    BASE_DIR / "users" / "static",# Another app-specific static directory
+    # Add other directories as needed
+]
+
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 
