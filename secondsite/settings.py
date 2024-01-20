@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'crispy_forms',
     'crispy_bootstrap5',
+    'corsheaders'
 ]
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
@@ -63,6 +64,7 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 # }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -70,6 +72,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'secondsite.urls'
@@ -88,6 +91,11 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+CORS_ALLOWED_ORIGINS = [
+    # "http://127.0.0.1:8000",  # Add your production origin here
+    "https://miscellaneousblogs.onrender.com",
 ]
 
 WSGI_APPLICATION = 'secondsite.wsgi.application'
