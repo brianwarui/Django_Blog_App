@@ -20,6 +20,7 @@ class Post(models.Model):
 	updated_on = models.DateTimeField(auto_now=True)
 	status = models.IntegerField(choices=STATUS, default=1)
 	author = models.ForeignKey(User, on_delete = models.CASCADE)
+	views = models.IntegerField(default=0)
 
 
 	def __str__(self):

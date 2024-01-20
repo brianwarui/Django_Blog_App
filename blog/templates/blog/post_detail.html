@@ -13,4 +13,8 @@
 		{% endif %}
 		<p> {{object.content | safe}} </p>
 
+		<div class="d-flex justify-content-between align-items-center">
+    <p class="mb-0">Number of Views: <span class="badge bg-primary">{{ object.views }}</span></p>
+</div>
+
 {% endblock %}

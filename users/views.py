@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect 
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import *
 from django.contrib import messages 
+from .models import Profile
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 # from django.contrib.auth.views import PasswordResetView
 # from django.urls import reverse_lazy
@@ -50,5 +52,19 @@ def profile(request):
 	}
 	return render(request, 'users/profile.html', context)
 
+@login_required
+def delete_user(request, user_id):
+    user_to_delete = get_object_or_404(User, id=user_id)
 
+    # Check if the logged-in user matches the user being deleted
+    if request.user != user_to_delete:
+       return redirect('home')
 
+    if request.method == 'POST':
+       profile = get_object_or_404(Profile, user=user_to_delete)
+       profile.delete()
+       user_to_delete.delete()
+
+       return redirect('home')  # Redirect to home or any other page after deletion
+
+    return render(request, 'users/delete_user_confirm.html', {'user': user_to_delete})
