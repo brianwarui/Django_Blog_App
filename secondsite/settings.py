@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -41,27 +41,26 @@ INSTALLED_APPS = [
     'blog',
     'users',
     'ckeditor',
-    'ckeditor_uploader',
     'crispy_forms',
     'crispy_bootstrap5',
 ]
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
-CKEDITOR_BASEPATH = "static/ckeditor/ckeditor"
+# CKEDITOR_BASEPATH = "static/ckeditor/ckeditor"
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Custom',
-        'height':500,
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline', 'Image'],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source']
-        ]
-    }
-}
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'toolbar': 'Custom',
+#         'height':500,
+#         'toolbar_Custom': [
+#             ['Bold', 'Italic', 'Underline', 'Image'],
+#             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+#             ['Link', 'Unlink'],
+#             ['RemoveFormat', 'Source']
+#         ]
+#     }
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -149,8 +148,7 @@ TIME_ZONE = 'Africa/Nairobi'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT= 'C:/Users/USER/Desktop/playground2/secondsite/static'
+STATIC_URL = '/static/'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 
