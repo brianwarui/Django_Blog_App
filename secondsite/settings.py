@@ -43,12 +43,13 @@ INSTALLED_APPS = [
     'ckeditor',
     'crispy_forms',
     'crispy_bootstrap5',
-    'corsheaders'
+    'corsheaders',
+    'whitenoise',
 ]
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
-CKEDITOR_BASEPATH = "/staticfiles/ckeditor/ckeditor"
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 
 # CKEDITOR_CONFIGS = {
 #     'default': {
@@ -64,8 +65,9 @@ CKEDITOR_BASEPATH = "/staticfiles/ckeditor/ckeditor"
 # }
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -157,15 +159,19 @@ TIME_ZONE = 'Africa/Nairobi'
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / "staticfiles"
 
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",               # Global/static project-wide directory
-    BASE_DIR / "blog" / "static",     # App-specific static directory
-    BASE_DIR / "users" / "static",# Another app-specific static directory
-    # Add other directories as needed
+    os.path.join(BASE_DIR, "static")
 ]
+
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
