@@ -4,19 +4,13 @@
 {% block content %}
 	
 	 <style>
-        /* Custom styles to override Bootstrap or other framework styles */
         .custom-input-group-append {
-        	position: relative;
-           
+            z-index: 2; /* Ensure the eye icon appears above the input field */
         }
 
         /* Adjust the position of the eye icon to the right of the password field */
         .custom-input-group-append button {
-            margin-left: 10px; /* Adjust the value based on your design */
-            position: absolute;
-            right: 5px; /* Adjust the value based on your design */
-            top: 50%; /* Vertically center the button */
-            transform: translateY(-50%);
+            margin-left: -40px;
         }
     </style>
 
