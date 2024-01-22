@@ -2,26 +2,47 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-	
-	<form method="post">	
-		{% csrf_token %}
-			<fieldset class="form-group"> <legend class="border-bottom mb-4"> Enter your credentials here </legend> </fieldset>
-		{{form|crispy}}
+    <form method="post">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Enter your credentials here</legend>
+        </fieldset>
 
-		<div class="form-group">
-			<button class="btn btn-outline-info" type="submit"> Sign In </button>
-			<small class="text-muted ml-2">
-				<a href="{% url 'password_reset' %}"> Forgot Password? </a>
-			</small>
+        {{ form.username|as_crispy_field }}
+        <div class="form-group">
+            <div class="input-group">
+                {{ form.password|as_crispy_field }}
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-outline-secondary" onclick="togglePasswordVisibility()">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-		</div>
-		</form>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Sign In</button>
+            <small class="text-muted ml-2">
+                <a href="{% url 'password_reset' %}">Forgot Password?</a>
+            </small>
+        </div>
+    </form>
 
-		<div class="border-top pt-3">
-			<small class="text-muted">
-			Don't have an account?  <a class="ml-2" href="{% url 'register' %}"> Create Account </a> </button>
-		</small>
-		</div>	
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Don't have an account? <a class="ml-2" href="{% url 'register' %}">Create Account</a>
+        </small>
+    </div>
 
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('{{ form.password.id_for_label }}');
+            const isVisible = passwordInput.type === 'text';
+            passwordInput.type = isVisible ? 'password' : 'text';
 
+            // Toggle eye icon
+            const eyeIcon = document.querySelector('#password-visibility-toggle i');
+            eyeIcon.className = isVisible ? 'fa fa-eye' : 'fa fa-eye-slash';
+        }
+    </script>
 {% endblock %}
