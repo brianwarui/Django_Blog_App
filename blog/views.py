@@ -28,11 +28,7 @@ class UserPostListView(ListView):
 class PostDetailView(DetailView):
     model = Post 
 
-    def view_blog(request, post_id):
-        blog = get_object_or_404(Post, id=post_id)
-        # Increment the views count
-        blog.views += 1
-        blog.save()
+    
 
 class PostCreateView(LoginRequiredMixin, CreateView):
 	model = Post  

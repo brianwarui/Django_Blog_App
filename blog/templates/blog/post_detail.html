@@ -1,4 +1,6 @@
 {% extends 'blog/main.html' %}
+{% load social_share %}
+
 
 {% block content %}
 	
@@ -13,8 +15,16 @@
 		{% endif %}
 		<p> {{object.content | safe}} </p>
 
-		<div class="d-flex justify-content-between align-items-center">
-    <p class="mb-0">Number of Views: <span class="badge bg-primary">{{ object.views }}</span></p>
+		<p class="small-text"> <strong> Share: </strong></p>
+	<div class="social-buttons-wrapper">
+	  {% post_to_facebook object.get_absolute_url "Facebook" %}
+	  {% post_to_twitter "{{ object.title }}" object.get_absolute_url "Twitter" %}
+	  {% post_to_linkedin object.get_absolute_url "LinkedIn" %}
+	  {% post_to_telegram "{{ object.title }}" object.get_absolute_url "Telegram" %}
+	  {% post_to_whatsapp  object.get_absolute_url "WhatsApp" %}
+	  {% post_to_reddit "{{ object.title }}" object.get_absolute_url "Reddit" %}
 </div>
+
+		
 
 {% endblock %}

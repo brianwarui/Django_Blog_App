@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["miscellaneousblogs.onrender.com", "localhost"]
+ALLOWED_HOSTS = ["miscellaneousblogs.onrender.com", "127.0.0.1"]
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'corsheaders',
     'whitenoise',
+    'django_social_share',
 ]
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
