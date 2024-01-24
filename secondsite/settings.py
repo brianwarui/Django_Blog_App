@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'corsheaders',
     'whitenoise',
-    'social_share',
+    'django_social_share',
 ]
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
