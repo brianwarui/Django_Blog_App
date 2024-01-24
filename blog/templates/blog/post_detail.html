@@ -19,7 +19,6 @@
 	<div class="social-buttons-wrapper">
 	  {% post_to_facebook object.get_absolute_url "Facebook" %}
 	  {% post_to_twitter "{{ object.title }}" object.get_absolute_url "Twitter" %}
-	  {% post_to_linkedin object.get_absolute_url "LinkedIn" %}
 	  {% post_to_telegram "{{ object.title }}" object.get_absolute_url "Telegram" %}
 	  {% post_to_whatsapp  object.get_absolute_url "WhatsApp" %}
 	  {% post_to_reddit "{{ object.title }}" object.get_absolute_url "Reddit" %}
