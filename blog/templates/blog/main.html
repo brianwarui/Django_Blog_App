@@ -6,7 +6,7 @@
 	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
      
-     <title> {% block title %} {% endblock %} </title>
+     <title> Miscellaneous Blogs </title>
      
 </head>
 <body>
@@ -18,9 +18,11 @@
 	 <!-- Navigation Bar -->
 	
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="/">Django Project </a>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <span class="navbar-title">Miscellaneous Blogs</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,8 +44,8 @@
                     <a class="nav-link" href="{% url 'profile' %}">Profile</a>
                     <a class="nav-link" href="{% url 'logout' %}"> Logout </a>
                 {% else %}
-                    <a class="nav-link" href="{% url 'register' %}"> Create Account </a>
-                    <a class="nav-link" href="{% url 'login' %}"> Sign In </a>
+                    <a class="nav-link" href="{% url 'register' %}"> Register </a>
+                    <a class="nav-link" href="{% url 'login' %}"> Login </a>
                 {% endif %}
         </div>
     </nav>
