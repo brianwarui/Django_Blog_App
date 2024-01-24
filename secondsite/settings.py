@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -50,7 +50,7 @@ INSTALLED_APPS = [
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
-CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+CKEDITOR_BASEPATH = "/staticfiles/ckeditor/ckeditor/"
 
 # CKEDITOR_CONFIGS = {
 #     'default': {
