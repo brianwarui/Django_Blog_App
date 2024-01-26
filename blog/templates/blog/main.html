@@ -62,6 +62,7 @@
         </ul>
 
         <ul>
+            <li class="menu-button" onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
             <li> <a href="/"> Miscellaneous Blogs </a> </li>
             <li> <a href="/"> Home </a> </li>
             <li> <a href="{% url 'post-create' %}"> New Post </a></li>
@@ -74,7 +75,7 @@
                  <li class="hideOnMobile"> <a href="{% url 'login' %}">Login</a> </li>
             {% endif %}
 
-            <li class="menu-button" onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
+            
 
         </ul>
     </nav>
