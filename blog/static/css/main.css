@@ -1,0 +1,10 @@
+.container {
+    margin-top: 0; 
+    padding-top: 0;
+    /* Set the desired margin-top value */
+}
+
+/* Adjust padding-top for the card-body */
+.card-body {
+    padding-top: 0px; /* Set the desired padding-top value */
+}

@@ -7,11 +7,14 @@ body {
     min-height: 100vh;
 }
 nav{
-    background-color: darkgrey;
+    background-color: darkcyan;
     box-shadow: 3px, 3px, 5px, rgba(0, 0, 0, 0.1);
+     height: 80px;
+
 }
 
 nav ul {
+    padding-top: 15px;
     width: 100%;
     list-style: none;
     display: flex;
@@ -43,7 +46,7 @@ nav li:nth-child(1) {
 }
 
 nav li:nth-child(2) {
-    margin-right: auto;
+    margin-right: inherit;
 }
 
 nav li:nth-child(3) {
