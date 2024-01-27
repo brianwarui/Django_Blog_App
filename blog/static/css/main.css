@@ -6,5 +6,30 @@
 
 /* Adjust padding-top for the card-body */
 .card-body {
-    padding-top: 0px; /* Set the desired padding-top value */
+    padding-top: 0px;
+    background-color: #f0f0f0;
+     /* Set the desired padding-top value */
+}
+
+
+/* Add padding and border to the card for better contrast */
+.card {
+    padding: 20px; /* Adjust padding as needed */
+    border: 1px solid #ddd; /* Light border color, adjust as needed */
+}
+
+/* Add a darker color to the card text for better readability */
+.card-body h2,
+.card-body p {
+    color: #333; /* Dark text color, adjust as needed */
+}
+
+/* Change the color of links within the card */
+.card-body a {
+    color: darkcyan; /* Link color, adjust as needed */
+}
+
+/* Add a box shadow to create depth */
+.card-body {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adjust box shadow as needed */
 }
